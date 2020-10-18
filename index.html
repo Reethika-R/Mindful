@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Index</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/fontawesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+	  
+	  
+	  <style>
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.li {
+  float:right;
+}
+
+.li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 55px;
+  text-decoration: none;
+}
+
+.li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: skyblue;
+}
+</style>
+	  
+   </head>
+   <body ng-app="facapp">
+     
+
+<ul class="ul"><b>
+ <li class="li"><button style="background-color:#29dcf0;"><a href="docapply.html">Join Us!</a></button></li>
+
+  <li class="li"><a href="login.html">Login/Register</a></li>
+  <li class="li"><a href="login.html">Book appointment</a></li>
+   <li class="li"><a href="blog.html">Blog</a></li>
+   <li class="li"><a  href="index.html">Home</a></li>
+   <li style="float:left;" class="li"><a  href="index.html"><i class='fas fa-heartbeat' style='font-size:32px;color:#29dcf0'></i>&nbsp;&nbsp;&nbsp;<b style="font-size:28px;" >Mindful</b></a></li>
+</b></ul>
+      <div id="home" class="slider">
+         <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#main_slider" data-slide-to="0" class="active"></li>
+               <li data-target="#main_slider" data-slide-to="1"></li>
+             
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img class="d-block w-100" src="imgs/slider1.jpg" alt="slider_img">
+                  <div class="ovarlay_slide_cont"  ng-controller="display2">
+                     <h2>{{w}}</h2>
+                     <h4>{{n}}</h4>
+                     <p>{{s}}</p>
+                     <a class="blue_bt" href="#service">See Our Service</a>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <img class="d-block w-100" src="imgs/slider2.jpg" alt="slider_img">
+                  <div class="ovarlay_slide_cont"  ng-controller="display2">
+                     <h2>{{h}}</h2>
+                     <h4>{{help}}</h4>
+                     <p> {{emp}}</p>
+                     <a class="blue_bt" href="#service">See Our Service</a>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <img src="imgs/left.png" alt="#" />
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <img src="imgs/right.png" alt="#" />
+            </a>
+         </div>
+      </div>
+      <div id="about" class="about_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-5"  ng-controller="display2">
+                  <h4>ABOUT US</h4>
+                  <h3 style="text-transform: none !important">{{d}}</h3>
+                  <p>{{op}}</p>
+               </div>
+
+               <div class="col-md-6 offset-md-1">
+                  <div class="full text_align_center">
+                     <img class="img-responsive" src="imgs/about.jpg" alt="#" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="hiw" class="hiw_section layout_padding" style="background: #1a2428;">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-7">
+                  <h3 class="white_font">How it Works</h3>
+                  <p class="white_font">Follow simple three steps</p>
+               </div>
+               <div class="col-md-5">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <p style="color:white;">Sharing can make you feel lighter and healing can lead to self-empowerment. Choose an online counselling plan most suitable for your needs, preferences, and goals.</p>
+                  <h3 class="blog_head" style="font-size:20px;">1
+Choose a Plan that suits you</h3>
+               </div>
+               <div class="col-md-4">
+                   <p style="color:white;">Connect to a professional counselor over Chat, Call or Video at a time convenient to you. You can also choose to be anonymous if you wish.</p>
+                  <h3 class="blog_head" style="font-size:20px;">2
+Connect To Your Counsellor</h3>
+               </div>
+               <div class="col-md-4">
+                   <p style="color:white;">Team up with your counselor to share your concerns and discuss challenges, experience therapeutic interventions and fulfill your therapy or counseling goals.
+                  </p><h3 class="blog_head" style="font-size:20px;">3
+Begin Happiness Journey</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="service" class="hiw_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-7" ng-controller="display3">
+                  <h3>{{our}}</h3>
+                  <p>Say Goodbye to Confusion & Anxiety.
+Get Professional Diagnosis & Treatment, Online!
+
+</p>
+               </div>
+               <div class="col-md-5">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-8 service_blog">
+                  <img class="margin_top_30 img-responsive" src="imgs/stress.jpg" alt="#" />
+                  <h3 class="blog_head">Stress</h3>
+               </div>
+               <div class="col-md-4 service_blog">
+                  <img class="margin_top_30 img-responsive" src="imgs/sleep.jpg" alt="#" />
+                  <h3 class="blog_head">Sleep deprivation</h3>
+               </div>
+               <div class="col-md-4 service_blog">
+                  <img class="margin_top_30 img-responsive" src="imgs/addiction.jpg" alt="#" />
+                  <h3 class="blog_head">Addiction</h3>
+               </div>
+               <div class="col-md-4 service_blog">
+                  <img class="margin_top_30 img-responsive" src="imgs/ocd.jpg" alt="#" />
+                  <h3 class="blog_head">OCD</h3>
+               </div>
+               <div class="col-md-4 service_blog">
+                  <img class="margin_top_30 img-responsive" src="imgs/anxiety.jpg" alt="#" />
+                  <h3 class="blog_head">Anxiety</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      
+      <div class="subcribe">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4 col-sm-6">
+                  <h3>Newsletter</h3>
+                  <p>Stay updated with our informative newsletters<br>subscribe here!</p>
+               </div>
+               <div class="col-md-8 col-sm-6">
+                  <form>
+                     <input type="email" name="email" placeholder="Enter Your Email Address" />
+                     <button>Subscribe</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="footer_blog_section">
+                     <h4 class="text-uppercase">Mindful</h4>
+                     <p style="margin-top: 5px;">Say Goodbye to Confusion & Anxiety.
+Get Professional Diagnosis & Treatment, Online!
+
+</p>
+                  </div>
+               </div>
+               <!--div class="col-lg-2 col-md-6 col-12">
+                  
+               </div-->
+               <div class="col-lg-4 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Contact Info</h4>
+                     <p><strong>Corporate Office Address:</strong></p>
+                     <p><img src="imgs/phone_icon.png" alt="#" /> 20,Alagar Street,Madurai-007</p>
+                     <p><strong>For queries:</strong></p>
+                     <p><img src="imgs/location.png" alt="#" /> 987 654 3210</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Navigation</h4>
+                     <ul>
+                        <li><a href="index.html">About us</a></li>
+                        <li><a href="index.html">How It Works</a></li>
+						<li><a href="blog.html">Blog</a></li>
+                        <li><a href="docapply.html">Join us</a></li>
+                        
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="copyright text-center">
+            <p>Copyright 2020</p>
+         </div>
+      </footer>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script>
+         $(function () {
+             
+             'use strict';
+             
+             var winH = $(window).height();
+             
+             $('header').height(winH);  
+             
+             $('header .container > div').css('top', (winH / 2) - ( $('header .container > div').height() / 2));
+             
+             $('.navbar ul li a.search').on('click', function (e) {
+                 e.preventDefault();
+             });
+             $('.navbar a.search').on('click', function () {
+                 $('.navbar form').fadeToggle();
+             });
+             
+             $('.navbar ul.navbar-nav li a').on('click', function (e) {
+                 
+                 var getAttr = $(this).attr('href');
+                 
+                 e.preventDefault();
+                 $('html').animate({scrollTop: $(getAttr).offset().top}, 1000);
+             });
+         })
+      </script>
+	  
+<script>
+var app = angular.module("facapp",[]);
+app.factory("samfactory",function()
+{
+    var facobj = {}; 
+    facobj.fun = function()
+	{
+	 return "OUR SERVICES";
+	}
+	return facobj;
+});
+app.controller("display3",function($scope,samfactory)
+{
+   $scope.our = samfactory.fun();
+});
+
+app.controller("display2",function($scope)
+{
+   $scope.w ="WHO";
+   $scope.n = "needs counseling";
+   $scope.s ="It’s sad, but we grew up NOT treating mind as a part of our body. Nothing else justifies the indifferent treatment that’s bestowed on our mind. Counseling is NOT for crazies, it never was.Counseling is for ANYONE, for EVERYONE who may be bothered by a short term, temporary tough phase.";
+   $scope.h ="HOW";
+   $scope.help ="counseling helps?";
+   $scope.emp ="Counseling EMPOWERS us by changing perspective and building resilience. A counselor will encourage you to share in a safe space, will listen to you intently, understand your thought patterns and then help replace negative thoughts with positive ones.";
+   $scope.d = "Don’t wait days for appointments. Get peace of mind in just hours.";
+   $scope.op = "This site offers opportunities to avail online consultations with experienced Psychiatrists and Clinical Psychologist based in India. Our experts provide affordable online interventions and second opinions for stress-related problems, alcoholism, psychiatric diseases and mental health issues.";
+});
+
+
+</script>  	  
+	  
+   </body>
+</html>

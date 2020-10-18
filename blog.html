@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Blog</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/fontawesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column1 {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column1 {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
+  
+}
+
+.container1 {
+  padding: 0 16px;
+}
+
+.container1::after, .row1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button1 {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button1:hover {
+  background-color: #555;
+}
+.card1:hover {
+  box-shadow: 0 16px 16px 0 rgba(0,0,0,10);
+}
+
+</style>
+</head>
+<body ng-app="myapp1">
+
+<ul class="ul"><b>
+ <li class="li"><button style="background-color:#29dcf0;"><a href="docapply.html">Join Us!</a></button></li>
+
+  <li class="li"><a href="login.html">Login/Register</a></li>
+  <li class="li"><a href="login.html">Book appointment</a></li>
+   <li class="li"><a href="blog.html">Blog</a></li>
+   <li class="li"><a  href="index.html">Home</a></li>
+   <li style="float:left;" class="li"><a  href="index.html"><i class='fas fa-heartbeat' style='font-size:32px;color:#29dcf0'></i>&nbsp;&nbsp;&nbsp;<b style="font-size:28px;" >Mindful</b></a></li>
+</b></ul>	  <style>
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.li {
+  float:right;
+}
+
+.li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 55px;
+  text-decoration: none;
+}
+
+.li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: skyblue;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: skyblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+
+<br>
+<center><h2>Article</h2></center>
+
+<br>
+
+<div class="row1">
+  <div class="column1">
+    <div class="card1">
+      <a href="http://yourdost.com/blog/2020/04/psychological-impact-of-covid-19-pandemic.html"><img src="stress.jpg" style="width:100%"></a>
+	  <br><br><br>
+      <div class="container1">
+       <blog1></blog1> <br><br><br>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column1">
+    <div class="card1">
+      <a href="http://yourdost.com/blog/2017/05/6-ways-to-distinguish-counseling-from-advice.html"><img src="cons2.jpg" style="width:100%"></a>
+      <div class="container1">
+       <blog2></blog2><br><br><br>        
+       </div>
+    </div>
+  </div>
+  
+  <div class="column1">
+    <div class="card1">
+        <a href="https://www.medicalnewstoday.com/articles/325353"><img src="sleep.jpg"style="width:100%"></a>
+      <div class="container1">
+       <blog3></blog3><br><br><br>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<div class="row1" ng-controller="parent">
+  <div class="column1">
+    <div class="card1">
+      <a href="https://www.manastha.com/why-you-must-take-online-therapy-and-counselling-for-your-mental-health/"><img src="pic.png" style="width:100%"></a>
+	  <br><br><br>
+      <div class="container1">
+       <b>{{blog4}}</b>
+      </div><br> As important you think your physical health is..<em>Read more..</em><br><br>
+    </div><br><br>
+  </div>
+  
+  <div class="column1" ng-controller="child">
+    <div class="card1">
+      <a href="https://www.skillsyouneed.com/ps/stress-tips.html"><img src="st.jpg" style="width:100%"></a>
+      <div class="container1">
+       <b>{{blog4}}</b>   
+       </div><br>These are the life changing options you..<em>Read more</em><br><br>
+    </div><br><br>
+  </div>
+  
+  <div class="column1">
+    <div class="card1">
+        <a href="http://yourdost.com/blog/2017/05/how-to-encourage-your-loved-one-to-start-counseling.html"><img src="hands.jpg"style="width:100%"></a>
+      <div class="container1">
+        <blog6></blog6><br><br><br>
+      </div>
+    </div>
+  </div> 
+</div><br>
+<br><br>
+<center>
+<div class="pagination">
+
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a href="#" class="active">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div></center>
+
+<div class="subcribe">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4 col-sm-6">
+                  <h3>Newsletter</h3>
+                  <p>Stay updated with our informative newsletters<br>subscribe here!</p>
+               </div>
+               <div class="col-md-8 col-sm-6">
+                  <form>
+                     <input type="email" name="email" placeholder="Enter Your Email Address" />
+                     <button>Subscribe</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+	  <footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="footer_blog_section">
+                     <h4 class="text-uppercase">Mindful</h4>
+                     <p style="margin-top: 5px;">Say Goodbye to Confusion & Anxiety.
+Get Professional Diagnosis & Treatment, Online!
+
+</p>
+                  </div>
+               </div>
+               <!--div class="col-lg-2 col-md-6 col-12">
+                  
+               </div-->
+               <div class="col-lg-4 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Contact Info</h4>
+                     <p><strong>Corporate Office Address:</strong></p>
+                     <p><img src="imgs/phone_icon.png" alt="#" /> 20,Alagar Street,Madurai-007</p>
+                     <p><strong>For queries:</strong></p>
+                     <p><img src="imgs/location.png" alt="#" /> 987 654 3210</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Navigation</h4>
+                     <ul>
+                        <li><a href="index.html">About us</a></li>
+                        <li><a href="index.html">How It Works</a></li>
+                        <li><a href="docapply.html">Join us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="copyright text-center">
+            <p>Copyright 2020</p>
+         </div>
+      </footer>
+
+
+<script>
+var app = angular.module("myapp1",[]);
+app.controller("parent",function($scope)
+{
+   $scope.blog4= "Mental Health";
+});
+app.directive("blog1",function()
+{
+   return { template: "<b>Psychological Impact of the COVID-19 Pandemic</b> <br>This quarantine has definitely made a huge diff..<em>Read more</em>" }; 
+});
+app.directive("blog2",function()
+{
+  return { template: "<b>6 Ways To Distinguish Counseling from Plain Advice</b> There is a significant difference we all forget...<em>Read more</em>" };
+});
+app.directive("blog3",function()
+{
+   return { template: "<b>Importance of Sleep</b><br>An average human body needs...<em>Read more</em>" };
+});
+
+
+app.controller("child",ch);
+ch.$inject = ['$scope'];
+function ch($scope)
+{
+   $scope.blog4= "Steps to control Stress";
+}
+
+app.directive("blog6",function()
+{
+   return { template: "<b>5 Tips To Encourage Your Loved One to Start Counseling</b><br>A life changing gift you can give to your...<em>Read more</em>" };
+});
+
+
+</script>
+</body>
+</html>
+

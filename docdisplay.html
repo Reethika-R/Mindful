@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Display Doctors</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/fontawesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column1 {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column1 {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color:white;
+}
+
+.container1 {
+  padding: 0 16px;
+}
+
+.container1::after, .row1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button1 {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 25%;
+  float : left;
+}
+.button2 {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+   background-color: grey;
+  text-align: center;
+  cursor: pointer;
+  width: 25%;
+  float : right;
+}
+
+.button1:hover {
+  background-color: #555;
+}
+.card1:hover {
+  box-shadow: 0 16px 16px 0 rgba(0,0,0,10);
+}
+
+img
+{
+float: right;
+}
+input[type=text], select, textarea {
+  width: 75%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+</style>
+</head>
+<body ng-app="filterapp"  ng-controller="filterctrl" style="background-color:skyblue;">
+      
+<ul class="ul"><b>
+ <li class="li"><button style="background-color:#29dcf0;"><a href="sug.html">Feedback</a></button></li>
+
+  <li class="li"><a href="login.html">Login/Register</a></li>
+  <li class="li"><a href="login.html">Book appointment</a></li>
+   <li class="li"><a href="blog.html">Blog</a></li>
+   <li class="li"><a  href="index.html">Home</a></li>
+   <li style="float:left;" class="li"><a  href="index.html"><i class='fas fa-heartbeat' style='font-size:32px;color:#29dcf0'></i>&nbsp;&nbsp;&nbsp;<b style="font-size:28px;" >Mindful</b></a></li>
+</b></ul>	  <style>
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.li {
+  float:right;
+}
+
+.li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 55px;
+  text-decoration: none;
+}
+
+.li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: skyblue;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: white;
+  color: black;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+
+<br>
+<center><input type="text" ng-model="search" placeholder="Search for doctor/location"></center>
+<br><br>
+<div class="row1">
+<div ng-repeat="list in doclist | filter:search">
+  <div class="column1">
+    <div class="card1">
+      <img src="avatar2.png" style="width:25%">
+      <div class="container1" >
+        <h2 style="font-size:30px;">Name: <b>{{list.name}}<b></h2>
+        <h2 style="font-size:30px;">Location:{{list.location}}</h2>
+        <h2 style="font-size:30px;">Specialisation: {{list.spe}}</h2>
+        <h2 style="font-size:30px;">Available time: {{ time | date }}</h2> 
+
+        <p><button class="button1" ng-model="bk">Book</button></p>
+        <p><button class="button2" ng-disabled="bk">Cancel</button></p>
+		<br><br><br>
+      </div>
+    </div>
+      </div>
+</div>
+</div>
+<br><br><br>
+<br><br>
+<center>
+<div class="pagination">
+
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a href="#" class="active">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div></center>
+<footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="footer_blog_section">
+                     <h4 class="text-uppercase">Mindful</h4>
+                     <p style="margin-top: 5px;">Say Goodbye to Confusion & Anxiety.
+Get Professional Diagnosis & Treatment, Online!
+
+</p>
+                  </div>
+               </div>
+               <!--div class="col-lg-2 col-md-6 col-12">
+                 
+               </div-->
+               <div class="col-lg-4 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Contact Info</h4>
+                     <p><strong>Corporate Office Address:</strong></p>
+                     <p><img src="imgs/phone_icon.png" alt="#" /> 20,Alagar Street,Madurai-007</p>
+                     <p><strong>For queries:</strong></p>
+                     <p><img src="imgs/location.png" alt="#" /> 987 654 3210</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Navigation</h4>
+                     <ul>
+                        <li><a href="index.html">About us</a></li>
+                        <li><a href="index.html">How It Works</a></li>
+                        <li><a href="docapply.html">Join us</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="copyright text-center">
+            <p>Copyright 2020</p>
+         </div>
+      </footer>
+<script>
+var app = angular.module("filterapp",[]);
+app.controller("filterctrl",function($scope)
+{
+   $scope.time = new Date();   
+   $scope.doclist = [  
+   { name:"Ram",location:"madurai",spe:"Forensic psychology"},
+   { name:"John",location:"Madurai",spe:"Adult physchiatrists"},
+   { name:"Harry",location:"Trichy",spe:"Mental health Councellors"},
+   { name:"Jenny",location:"coimbatore",spe:"Clinical practitioners"},
+   { name:"Kala",location:"Chennai",spe:"Cognitive psychologist"},
+   { name:"Mickle",location:"Tanjore",spe:"Forensic psychology"},   
+   { name:"Fary",location:"Trichy",spe:"Marriage and Family Therapist"},   
+   { name:"Danny",location:"Chennai",spe:"Clinical practitioners"}
+   ];
+});
+</script>
+
+
+
+</body>
+</html>
+
