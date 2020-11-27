@@ -90,17 +90,17 @@ body { background-image:url('gif1.gif'); background-repeat:repeat; background-si
 <div class="container1" style="color:white;">
    <h1><center>Feedback</center></h1>
 <h4><center>Leave your suggestions below...</center></h4>
-  <form ng-app="forms" ng-controller="nc">
+  <form action="sugg.php" method="post">
 
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" ng-model="fname" placeholder="Your name..">
+    <input type="text" id="fname" name="firstname"  placeholder="Your name..">
 
     <label for="lname">Location</label>
-    <input type="text" id="lname" name="lastname" ng-model="loc" placeholder="Your Location..">
+    <input type="text" id="lname" name="loc"  placeholder="Your Location..">
 
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" ng-model="sub" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="subject"  placeholder="Write something.." style="height:200px"></textarea>
     <input type="submit" value="Submit">
   </form>
 </div>
